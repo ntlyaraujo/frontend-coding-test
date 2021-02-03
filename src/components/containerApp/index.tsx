@@ -1,24 +1,20 @@
-import { useTheme, View, Text} from "vcc-ui";
+import { FunctionComponent } from "react";
+import { useTheme, View, Text } from "vcc-ui";
 
-export const ContainerApp = () => {
+const ContainerApp: FunctionComponent = ({ children }) => {
   const theme = useTheme();
   return (
     <View
       padding={[1, 2]}
       spacing={2}
       direction={"column"}
-      justifyContent={"flex-start"}
+      justifyContent={"center"}
       height={"100vh"}
       extend={{
         background: theme.color.background.secondary,
       }}
     >
-      <View
-        direction={"column"}
-        extend={{
-          border: "1px solid grey",
-        }}
-      >
+      <View direction={"column"} alignSelf={"center"}>
         <Text variant="hillary" subStyle="emphasis">
           All Recharge models
         </Text>
@@ -32,20 +28,7 @@ export const ContainerApp = () => {
           border: "1px solid grey",
         }}
       >
-        {/* <Card>
-          <CardContent>
-            <Text variant="ootah">Card Component</Text>
-            <Spacer />
-            <Text>This is a card</Text>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardContent>
-            <Text variant="ootah">Card Component</Text>
-            <Spacer />
-            <Text>This is a card</Text>
-          </CardContent>
-        </Card> */}
+        {children}
       </View>
     </View>
   );

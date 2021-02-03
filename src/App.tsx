@@ -1,10 +1,9 @@
-import ContainerApp from "./components/containerApp"
-import './App.css';
+import HomePage from "./pages/home"
 
 function App() {
   return (
-    <div className="App">
-      <ContainerApp/>
+    <div>
+      <HomePage/>
     </div>
   );
 }
