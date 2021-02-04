@@ -35,9 +35,6 @@ const CarouselView = ({ children, isRTL, itemsToShow }: CarouselViewProps) => {
       spacing={2}
       direction={"column"}
       justifyContent={"flex-start"}
-      extend={{
-        border: "1px solid grey",
-      }}
     >
       <Carousel
         ref={carouselRef}
@@ -46,7 +43,7 @@ const CarouselView = ({ children, isRTL, itemsToShow }: CarouselViewProps) => {
         breakPoints={[
           { width: 1, itemsToShow: 1 },
           { width: 550, itemsToShow: 2 },
-          { width: 850, itemsToShow: 3 },
+          { width: 850, itemsToShow: 2 },
           { width: 1150, itemsToShow: 4 },
           { width: 1450, itemsToShow: 4 },
           { width: 1750, itemsToShow: 4 },

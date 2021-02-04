@@ -17,10 +17,7 @@ const Card = ({ header, content, actions }: CardProps) => {
   return (
     <View
       direction={"column"}
-      width={"35vh"}
-      extend={{
-        border: "1px solid grey",
-      }}
+      width={"30vh"}
     >
       <View className="card__header" direction={"column"}>
         <Text

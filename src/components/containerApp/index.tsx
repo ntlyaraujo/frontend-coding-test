@@ -26,9 +26,6 @@ const ContainerApp = ({ children, title }: ContainerAppProps) => {
         direction={"column"}
         padding={[1, 2]}
         spacing={2}
-        extend={{
-          border: "5px solid red",
-        }}
       >
         {children}
       </View>
