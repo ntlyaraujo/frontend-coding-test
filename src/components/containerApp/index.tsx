@@ -1,7 +1,9 @@
-import { FunctionComponent } from "react";
 import { useTheme, View, Text } from "vcc-ui";
-
-const ContainerApp: FunctionComponent = ({ children }) => {
+interface ContainerAppProps {
+  children?: React.ReactNode;
+  title?: string;
+}
+const ContainerApp = ({ children, title }: ContainerAppProps) => {
   const theme = useTheme();
   return (
     <View
@@ -14,18 +16,18 @@ const ContainerApp: FunctionComponent = ({ children }) => {
         background: theme.color.background.secondary,
       }}
     >
-      <View direction={"column"} alignSelf={"center"}>
+      <View  alignSelf={"center"}>
         <Text variant="hillary" subStyle="emphasis">
-          All Recharge models
+         {title}
         </Text>
       </View>
 
       <View
-        direction={"row"}
+        direction={"column"}
         padding={[1, 2]}
         spacing={2}
         extend={{
-          border: "1px solid grey",
+          border: "5px solid red",
         }}
       >
         {children}
