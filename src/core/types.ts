@@ -1,3 +1,5 @@
+import { RefObject, SuspenseProps } from "react";
+import ReactElasticCarousel from "react-elastic-carousel";
 export const REQUEST_CARS = "REQUEST_CARS";
 
 export interface Car {
@@ -14,6 +16,10 @@ export interface CarResponse {
 interface RequestCarsAction {
   type: typeof REQUEST_CARS;
   payload: CarResponse;
+}
+export interface CarouselRef extends ReactElasticCarousel {
+  slidePrev: () => void
+  slideNext: () => void
 }
 
 export type RequestActionTypes = RequestCarsAction;
