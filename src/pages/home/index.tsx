@@ -10,7 +10,6 @@ const HomePage = (props: any) => {
   const { data, isPending } = useCar();
 
   const renderCardList = (data: CarResponse) => {
-    console.log("data: ", data);
     const { cars } = data;
     return cars.map((item) => (
       <Card
@@ -21,8 +20,10 @@ const HomePage = (props: any) => {
           descriptionTop: item.bodyType,
         }}
         content={{
-            image: item.imageUrl,
-          }}
+          image: item.imageUrl,
+        }}
+        actions={['Learn','Shop']}
+        arrow="right"
       />
     ));
   };

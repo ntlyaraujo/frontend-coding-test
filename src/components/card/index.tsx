@@ -1,4 +1,4 @@
-import { useTheme, View, Text, Inline } from "vcc-ui";
+import { useTheme, View, Text, Link } from "vcc-ui";
 interface CardProps {
   key: string;
   header: {
@@ -10,15 +10,18 @@ interface CardProps {
     image?: string;
     text?: string;
   };
-  actions?: string[];
+  actions: string[];
+  arrow?: string
 }
-const Card = ({ header, content, actions }: CardProps) => {
+const Card = ({ header, content, actions, arrow }: CardProps) => {
   const theme = useTheme();
+
+  const renderActions = (actions: string[]) => {
+    return actions.map((item) => <Link arrow={arrow}>{item}</Link>);
+  };
+
   return (
-    <View
-      direction={"column"}
-      width={"30vh"}
-    >
+    <View direction={"column"} width={"30vh"}>
       <View className="card__header" direction={"column"}>
         <Text
           className="card__header__descriptionTop"
@@ -29,12 +32,12 @@ const Card = ({ header, content, actions }: CardProps) => {
         >
           {header.descriptionTop}
         </Text>
-        <View direction={"row"} alignItems={"baseline"} justifyContent={"space-between"}>
-          <Text
-            className="card__header__title"
-            variant="hillary"
-            subStyle="emphasis"
-          >
+        <View
+          direction={"row"}
+          alignItems={"baseline"}
+          justifyContent={"space-between"}
+        >
+          <Text className="card__header__title" subStyle="emphasis">
             {header.title}
           </Text>
 
@@ -48,10 +51,20 @@ const Card = ({ header, content, actions }: CardProps) => {
           </Text>
         </View>
       </View>
-      <View className="card__content" alignItems={"flex-start"} direction={"column"}>
-      <img src={content?.image} alt="Car" width={"100%"} />
+      <View
+        className="card__content"
+        alignItems={"flex-start"}
+        direction={"column"}
+      >
+        <img src={content?.image} alt="Car" width={"100%"} />
       </View>
-      <View className="card__actions" direction={"row"}></View>
+      <View
+        className="card__actions"
+        direction={"row"}
+        justifyContent={"space-around"}
+      >
+        {renderActions(actions)}
+      </View>
     </View>
   );
 };
