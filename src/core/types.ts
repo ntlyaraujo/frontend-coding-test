@@ -1,4 +1,3 @@
-import { RefObject, SuspenseProps } from "react";
 import ReactElasticCarousel from "react-elastic-carousel";
 export const REQUEST_CARS = "REQUEST_CARS";
 

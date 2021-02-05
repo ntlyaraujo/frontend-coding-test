@@ -11,7 +11,7 @@ interface CardProps {
     text?: string;
   };
   actions: string[];
-  arrow?: string
+  arrow?: string;
 }
 const Card = ({ header, content, actions, arrow }: CardProps) => {
   const theme = useTheme();
